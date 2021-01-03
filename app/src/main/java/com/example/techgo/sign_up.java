@@ -61,7 +61,7 @@ public class sign_up extends AppCompatActivity {
                 //email and phone number
                 String email = username_text.getText().toString();
                 String phone = password_text.getText().toString();
-
+                // User newUser = new User(username,email,password,confirmPassword);
                 User newUser = new User("nmndnsdsd","namnfdhllfe@gmail.com","dsndsishfi","dsndsishfi");
                 Vector<String> arr =  newUser.CreateAccount(database.getReference());
 
