@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
+
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
         super.onCreate(savedInstanceState);
@@ -76,13 +78,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = edUsername.getText().toString();
                 String password = edPassword.getText().toString();
+                //User a = new User("nguyenNam", "namnguyen21@gmail.com","123456789", "123456789","0123456789",
+                        //"Ton duc thang q1", "22/05/2000" , "kocogihet0" , "customer" , 105.42,53.25);
+                //Vector <String> a1 = a.CreateAccount(myRef);
+                //Location no = new Location(102.95,105.12);
+                //no.createLocation(myRef);
+                //RideDetail no1 = new RideDetail("nlk2QjdQhkcTojnUaOBlNBuACvH2","-MQNHCrYA6F8JZB3c-im", no,no, no,no);
+                //no1.createRide(myRef);
+                RideDetail no1 = new RideDetail();
+                no1.completeRide(myRef,"-MQNZSXM4lfFhd3uHYEl");
+
                 if(username.matches("") || password.matches(""))
                     alertDialog("Fill in username or password!");
                 else mAuth.signInWithEmailAndPassword(username, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                System.out.println(task);
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    FirebaseUser user = mAuth.getCurrentUser();
+
+                                }
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -91,8 +107,6 @@ public class MainActivity extends AppCompatActivity {
                                 System.out.println(e);
                             }
                         });
-
-
             }
         });
 

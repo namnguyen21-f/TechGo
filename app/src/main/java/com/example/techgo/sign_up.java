@@ -17,10 +17,10 @@ import java.util.Locale;
 import java.util.Vector;
 
 public class sign_up extends AppCompatActivity {
-
     private Button Customer_bt;
     private EditText username_text;
     private EditText password_text;
+    private EditText confirmpassword_text;
     private EditText email_text;
     private EditText phone_text;
     private boolean is_customer = false;
@@ -28,45 +28,36 @@ public class sign_up extends AppCompatActivity {
     private FirebaseDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         setAppLocale("en");
-
-        Customer_bt = findViewById(R.id.customer_bt);
-        Customer_bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                is_customer = true;
-            }
-        });
-
+        mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
 
         username_text = findViewById(R.id.user_name_register_text);
         password_text = findViewById(R.id.pw_register_text);
+        confirmpassword_text = findViewById(R.id.retype_pw_register_text);
 
         email_text = findViewById(R.id.email_register_text);
         phone_text = findViewById(R.id.phone_num_register_text);
-
         Button bt_next = findViewById(R.id.next_register_bt);
+
         bt_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //name and password
                 String username = username_text.getText().toString();
-                String password = password_text.getText().toString();
-
+                String password = password_text.getText().toString().trim();
                 //email and phone number
-                String email = username_text.getText().toString();
+                String confirmPassword = confirmpassword_text.getText().toString().trim();
+                String email = email_text.getText().toString();
                 String phone = password_text.getText().toString();
-                // User newUser = new User(username,email,password,confirmPassword);
-                User newUser = new User("nmndnsdsd","namnfdhllfe@gmail.com","dsndsishfi","dsndsishfi");
+                System.out.println(password.length());
+                System.out.println(confirmPassword.length());
+                User newUser = new User(username,email,password,confirmPassword,phone,"","","","",102.222,60.000);
                 Vector<String> arr =  newUser.CreateAccount(database.getReference());
-
+                System.out.println(arr);
                 //Intent intent = new Intent();
-                //intent.setClass(sign_up.this, sign_up2.class);
+                //Intent.setClass(sign_up.this, sign_up2.class);
                 //startActivity(intent);
             }
         }) ;

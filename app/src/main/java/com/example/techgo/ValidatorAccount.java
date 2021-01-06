@@ -12,6 +12,7 @@ public class ValidatorAccount {
     }
     public Vector<String> Validator(String email,String password,String confirmPassword,String username){
         Vector<String> error = new Vector<String>();
+
         String EMAIL_PATTERN =
                 "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
         if (isEmpty(email)){
@@ -23,7 +24,7 @@ public class ValidatorAccount {
             error.add("Password is empty");
         }else if (password.length() < 6){
             error.add("Password is too short");
-        }else if (password != confirmPassword){
+        }else if (!password.equals(confirmPassword)){
             error.add("Password and ConfirmPassword does not match");
         }
         if (isEmpty(username)){

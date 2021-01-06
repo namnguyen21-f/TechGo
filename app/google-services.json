@@ -1,72 +1,42 @@
 {
   "project_info": {
-    "project_number": "729751021843",
-    "firebase_url": "https://techgo-31b80-default-rtdb.firebaseio.com",
-    "project_id": "techgo-31b80",
-    "storage_bucket": "techgo-31b80.appspot.com"
+    "project_number": "7085303630",
+    "firebase_url": "https://bamboo-archery-297013-default-rtdb.firebaseio.com",
+    "project_id": "bamboo-archery-297013",
+    "storage_bucket": "bamboo-archery-297013.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:729751021843:android:b0e9a23e71b15e3edf52e6",
+        "mobilesdk_app_id": "1:7085303630:android:888e5e6d60b53c1dde601f",
         "android_client_info": {
           "package_name": "com.example.techgo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "729751021843-ni0732febj63c03b1rnu02dqj0u5u3d6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.myapplication",
-            "certificate_hash": "76eb7ff63b198ef2a5262e91ed81ec531dd7fd6e"
-          }
-        },
-        {
-          "client_id": "729751021843-mahsbgb0r3u4jmmcjupnvdgjh4sd41oa.apps.googleusercontent.com",
+          "client_id": "7085303630-g0c5bn8qqj8qkcrc88aphht27rtob19h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCmLgbk4AJfMLAVR-By7p5kiO7gqaRIS1U"
+          "current_key": "AIzaSyDgPGrlL13IBkRWbxJC6hsKXXvcXXc-g7o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "729751021843-mahsbgb0r3u4jmmcjupnvdgjh4sd41oa.apps.googleusercontent.com",
+              "client_id": "7085303630-g0c5bn8qqj8qkcrc88aphht27rtob19h.apps.googleusercontent.com",
               "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:729751021843:android:4e7c73c4c0997c1edf52e6",
-        "android_client_info": {
-          "package_name": "com.group09.TechGo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "729751021843-mahsbgb0r3u4jmmcjupnvdgjh4sd41oa.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCmLgbk4AJfMLAVR-By7p5kiO7gqaRIS1U"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
+            },
             {
-              "client_id": "729751021843-mahsbgb0r3u4jmmcjupnvdgjh4sd41oa.apps.googleusercontent.com",
-              "client_type": 3
+              "client_id": "7085303630-r396lec65dq0vn34lqodiv6iternfa12.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "techGoFireBase.hcmus.edu.vn.TechGo"
+              }
             }
           ]
         }
